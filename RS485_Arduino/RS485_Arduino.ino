@@ -19,7 +19,12 @@ void setup() {
   Serial.begin(9600);
   pinMode(4, INPUT);
   delay(2);
-  slave = digitalRead(4) == 1 ? true : false;
+  if(digitalRead(4) == HIGH){
+    slave = true;
+  }
+  else{
+    slave = false;
+  }
   delay(2);
 }
 
@@ -64,10 +69,10 @@ void reset(bool slave, String st){
 }
 
 void check(bool slave, String st){
-  if(slave ==true){
+  if(slave == true && st == "Check"){
     Serial.println("ON1");
   }
-  if(slave ==false){
+  if(slave == false && st == "Check"){
     delay(20);
     Serial.println("ON2");
   }
@@ -111,6 +116,7 @@ void loop() {
     }
     reset(slave,st);
     check(slave,st);
+    st = "";
     ok = false;
   }
 }

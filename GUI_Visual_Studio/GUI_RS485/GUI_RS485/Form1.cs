@@ -152,106 +152,110 @@ namespace GUI_RS485
             String allData = "";
             allData = serCom.ReadLine();
             txtdata.Text = allData;
+            int leng = allData.Length;
             //@01B1#
             //012345
             if (allData != "")
             {
-                String sl = allData.Substring(2, 1);
-                String status = allData.Substring(3, 1);
-                String led = allData.Substring(4, 1);
-                String checksl = allData;
-                if (checksl == "ONSL1")
+                if (allData == "ON1")
                 {
                     picsl1.BackColor = Color.Green;
                 }
-                if (checksl == "ONSL2")
+                if (allData == "ON2")
                 {
                     picsl2.BackColor = Color.Green;
                 }
-                if (sl == "1")
-                {
-                    txtsl1.Text = allData;
-                    if (status == "B")
+               // if (leng == 6)
+               // {
+                    String sl = allData.Substring(2, 1);
+                    String status = allData.Substring(3, 1);
+                    String led = allData.Substring(4, 1);
+                    String checksl = allData;
+                    if (sl == "1")
                     {
-                        if (led == "1")
+                        txtsl1.Text = allData;
+                        if (status == "B")
                         {
-                            pic1sl1.BackColor = Color.Green;
+                            if (led == "1")
+                            {
+                                pic1sl1.BackColor = Color.Green;
+                            }
+                            if (led == "2")
+                            {
+                                pic2sl1.BackColor = Color.Green;
+                            }
+                            if (led == "3")
+                            {
+                                pic3sl1.BackColor = Color.Green;
+                            }
+                            if (led == "4")
+                            {
+                                pic4sl1.BackColor = Color.Green;
+                            }
                         }
-                        if (led == "2")
+                        if (status == "T")
                         {
-                            pic2sl1.BackColor = Color.Green;
-                        }
-                        if (led == "3")
-                        {
-                            pic3sl1.BackColor = Color.Green;
-                        }
-                        if (led == "4")
-                        {
-                            pic4sl1.BackColor = Color.Green;
+                            if (led == "1")
+                            {
+                                pic1sl1.BackColor = Color.Red;
+                            }
+                            if (led == "2")
+                            {
+                                pic2sl1.BackColor = Color.Red;
+                            }
+                            if (led == "3")
+                            {
+                                pic3sl1.BackColor = Color.Red;
+                            }
+                            if (led == "4")
+                            {
+                                pic4sl1.BackColor = Color.Red;
+                            }
                         }
                     }
-                    if (status == "T")
+                    if (sl == "2")
                     {
-                        if (led == "1")
+                        txtsl2.Text = allData;
+                        if (status == "B")
                         {
-                            pic1sl1.BackColor = Color.Red;
+                            if (led == "1")
+                            {
+                                pic1sl2.BackColor = Color.Green;
+                            }
+                            if (led == "2")
+                            {
+                                pic2sl2.BackColor = Color.Green;
+                            }
+                            if (led == "3")
+                            {
+                                pic3sl2.BackColor = Color.Green;
+                            }
+                            if (led == "4")
+                            {
+                                pic4sl2.BackColor = Color.Green;
+                            }
                         }
-                        if (led == "2")
+                        if (status == "T")
                         {
-                            pic2sl1.BackColor = Color.Red;
-                        }
-                        if (led == "3")
-                        {
-                            pic3sl1.BackColor = Color.Red;
-                        }
-                        if (led == "4")
-                        {
-                            pic4sl1.BackColor = Color.Red;
+                            if (led == "1")
+                            {
+                                pic1sl2.BackColor = Color.Red;
+                            }
+                            if (led == "2")
+                            {
+                                pic2sl2.BackColor = Color.Red;
+                            }
+                            if (led == "3")
+                            {
+                                pic3sl2.BackColor = Color.Red;
+                            }
+                            if (led == "4")
+                            {
+                                pic4sl2.BackColor = Color.Red;
+                            }
                         }
                     }
-                }
-                if (sl == "2")
-                {
-                    txtsl2.Text = allData;
-                    if (status == "B")
-                    {
-                        if (led == "1")
-                        {
-                            pic1sl2.BackColor = Color.Green;
-                        }
-                        if (led == "2")
-                        {
-                            pic2sl2.BackColor = Color.Green;
-                        }
-                        if (led == "3")
-                        {
-                            pic3sl2.BackColor = Color.Green;
-                        }
-                        if (led == "4")
-                        {
-                            pic4sl2.BackColor = Color.Green;
-                        }
-                    }
-                    if (status == "T")
-                    {
-                        if (led == "1")
-                        {
-                            pic1sl2.BackColor = Color.Red;
-                        }
-                        if (led == "2")
-                        {
-                            pic2sl2.BackColor = Color.Red;
-                        }
-                        if (led == "3")
-                        {
-                            pic3sl2.BackColor = Color.Red;
-                        }
-                        if (led == "4")
-                        {
-                            pic4sl2.BackColor = Color.Red;
-                        }
-                    }
-                }
+               // }
             }
         }
     }

@@ -97,6 +97,7 @@ namespace GUI_RS485
             this.button2 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picsl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picsl1)).BeginInit();
@@ -436,6 +437,7 @@ namespace GUI_RS485
             this.groupBox3.TabIndex = 38;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "CONNECT";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // button10
             // 
@@ -465,6 +467,7 @@ namespace GUI_RS485
             this.txtdata.Name = "txtdata";
             this.txtdata.Size = new System.Drawing.Size(174, 30);
             this.txtdata.TabIndex = 23;
+            this.txtdata.TextChanged += new System.EventHandler(this.txtdata_TextChanged);
             // 
             // label11
             // 
@@ -871,6 +874,12 @@ namespace GUI_RS485
             this.label8.TabIndex = 35;
             this.label8.Text = "LED CONTROL";
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -982,6 +991,7 @@ namespace GUI_RS485
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 

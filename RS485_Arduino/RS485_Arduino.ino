@@ -14,38 +14,38 @@ void setup() {
     pinMode(i, OUTPUT);
   }
   pinMode(signall, OUTPUT);
-  delay(2);
+  delay(10);
   digitalWrite(signall, LOW);
   Serial.begin(9600);
   pinMode(4, INPUT);
-  delay(2);
+  delay(10);
   if(digitalRead(4) == HIGH){
     slave = true;
   }
   else{
     slave = false;
   }
-  delay(2);
+  delay(10);
 }
 
 void ledon(int i, String st) {
   digitalWrite(i + 9, HIGH);
-  delay(5);
+  delay(10);
   digitalWrite(signall, HIGH);
   Serial.println(st);
-  delay(5);
+  delay(10);
   digitalWrite(signall, LOW);
-  delay(5);
+  delay(10);
 }
 
 void ledoff(int i, String st) {
   digitalWrite(i + 9, LOW);
-  delay(5);
+  delay(10);
   digitalWrite(signall, HIGH);
   Serial.println(st);
-  delay(5);
+  delay(10);
   digitalWrite(signall, LOW);
-  delay(5);
+  delay(10);
 }
 
 void reset(bool slave, String st){
@@ -53,7 +53,10 @@ void reset(bool slave, String st){
         if (slave == true) {
           for (int i = 1; i <= 4; i++) {
             digitalWrite(9 + i, LOW);
+            digitalWrite(signall,HIGH);
             Serial.println("@01T" + String(i) + "#");
+            delay(10);
+            digitalWrite(signall,LOW);
             delay(10);
           }
         } 
@@ -61,7 +64,10 @@ void reset(bool slave, String st){
           delay(50);
           for (int i = 1; i <= 4; i++) {
             digitalWrite(9 + i, LOW);
+            digitalWrite(signall,HIGH);
             Serial.println("@02T" + String(i) + "#");
+            delay(10);
+            digitalWrite(signall,LOW);
             delay(10);
           }
         }
@@ -70,11 +76,15 @@ void reset(bool slave, String st){
 
 void check(bool slave, String st){
   if(slave == true && st == "Check"){
+    digitalWrite(signall,HIGH);
     Serial.println("ON1");
+    digitalWrite(signall,LOW);
   }
   if(slave == false && st == "Check"){
     delay(20);
+    digitalWrite(signall,HIGH);
     Serial.println("ON2");
+    digitalWrite(signall,LOW);
   }
 }
 

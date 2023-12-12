@@ -157,16 +157,20 @@ namespace GUI_RS485
             //012345
             if (allData != "")
             {
-                if (allData == "ON1")
+                if (leng == 4)
                 {
-                    picsl1.BackColor = Color.Green;
+                    String trangthai = allData.Substring(2, 1);
+                    if (trangthai == "1")
+                    {
+                        picsl1.BackColor = Color.Green;
+                    }
+                    if (trangthai =="2")
+                    {
+                        picsl2.BackColor = Color.Green;
+                    }
                 }
-                if (allData == "ON2")
+                if (leng == 7)
                 {
-                    picsl2.BackColor = Color.Green;
-                }
-               // if (leng == 6)
-               // {
                     String sl = allData.Substring(2, 1);
                     String status = allData.Substring(3, 1);
                     String led = allData.Substring(4, 1);
@@ -255,8 +259,23 @@ namespace GUI_RS485
                             }
                         }
                     }
-               // }
+                }
             }
+        }
+
+        private void texttest_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtdata_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

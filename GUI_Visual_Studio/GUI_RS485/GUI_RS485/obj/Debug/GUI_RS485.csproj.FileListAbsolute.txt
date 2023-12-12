@@ -1,0 +1,10 @@
+D:\RS485_Arduino\GUI_Visual_Studio\GUI_RS485\GUI_RS485\bin\Debug\GUI_RS485.exe.config
+D:\RS485_Arduino\GUI_Visual_Studio\GUI_RS485\GUI_RS485\bin\Debug\GUI_RS485.exe
+D:\RS485_Arduino\GUI_Visual_Studio\GUI_RS485\GUI_RS485\bin\Debug\GUI_RS485.pdb
+D:\RS485_Arduino\GUI_Visual_Studio\GUI_RS485\GUI_RS485\obj\Debug\GUI_RS485.csproj.AssemblyReference.cache
+D:\RS485_Arduino\GUI_Visual_Studio\GUI_RS485\GUI_RS485\obj\Debug\GUI_RS485.Form1.resources
+D:\RS485_Arduino\GUI_Visual_Studio\GUI_RS485\GUI_RS485\obj\Debug\GUI_RS485.Properties.Resources.resources
+D:\RS485_Arduino\GUI_Visual_Studio\GUI_RS485\GUI_RS485\obj\Debug\GUI_RS485.csproj.GenerateResource.cache
+D:\RS485_Arduino\GUI_Visual_Studio\GUI_RS485\GUI_RS485\obj\Debug\GUI_RS485.csproj.CoreCompileInputs.cache
+D:\RS485_Arduino\GUI_Visual_Studio\GUI_RS485\GUI_RS485\obj\Debug\GUI_RS485.exe
+D:\RS485_Arduino\GUI_Visual_Studio\GUI_RS485\GUI_RS485\obj\Debug\GUI_RS485.pdb
